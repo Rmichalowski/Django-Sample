@@ -1,0 +1,45 @@
+{% extends 'layout.html '%}
+
+{% block content %}
+<contents>
+    <div class="srodek">
+
+        <div class="add_rzecz_form_naglowek">
+             <div class="add_rzecz_form_napis">Dodaj do {{aktualna_półka}}</div>
+        <div class="add_rzecz_form">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Dodaj</button> <!--<button type="">Anuluj</button>-->
+      </form>
+    </div>
+    </div>
+<div class="naglowek_podstrony_napis_rzecz">Lista rzeczy w {{aktualna_półka}}:</div>
+        <div class="rzeczy">
+        {% for rzecz in rzeczy_all %}
+
+    <div class="rzecz">
+                <div class="rzecz_dane">
+                {{rzecz.nazwa}}
+                    <div class="parametry_rzeczy">
+                        Ilość:{{rzecz.ilość}} <br>
+                        Waga:{{rzecz.waga}} <br>
+                        Gabaryt:{{rzecz.gabaryt}} <br>
+
+                    </div>
+                </div>
+                <div class="rzecz_delete_button">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <button type="submit" id="usun_rzecz" name="usun" value="{{rzecz.pk}}">
+                            x
+                        </button>
+                    </form>
+                </div>
+        </div>
+            {% endfor %}
+</div>
+    </div>
+</contents>
+{% endblock %}

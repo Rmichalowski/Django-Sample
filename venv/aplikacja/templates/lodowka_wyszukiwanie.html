@@ -1,0 +1,60 @@
+{% extends 'layout.html '%}
+{% block content %}
+<contents>
+    <div class="srodek" style="padding-top: 1vh;">
+        {% if wyszukiwanie %}
+            <div class="naglowek_podstrony_napis_rzecz" >
+                <div class="napis_rzecz">Wyniki wyszukiwania dla: "{{wyszukiwanie}}"</div>
+            <div class="wyszukiwarka">
+                <form class="d-flex" method="POST" action="{% url 'lodowka_wyszukiwanie' %}">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Wyszukaj po nazwie" aria-label="Wyszukaj" name="wyszukiwanie">
+                    <button class="btn btn-outline-secondary" type="sumit">
+                        Wyszukaj
+                    </button>
+                </form>
+            </div>
+            </div>
+
+         <div class="rzeczy">
+    {% for Lodowka in lodowka %}
+        <div class = 'rzecz'>
+            <div class = "rzecz_dane">
+
+            <a href="/lodowka/{{Lodowka.pk}}">{{Lodowka.nazwa}}</a>
+
+            </div>
+
+            <div class="Rzecz_delete_button">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <button type="submit" id="usun_rzecz" name="usun" value="{{Lodowka.pk}}">
+                            x
+                        </button>
+                    </form>
+                </div>
+        </div>
+    {% endfor %}
+    </div>
+
+
+        {% else %}
+            <div class="naglowek_podstrony_napis_rzecz">
+              <div class="napis_rzecz">Nie wpisano żadnej nazwy!!!</div>
+            <div class="wyszukiwarka">
+                <form class="d-flex" method="POST" action="{% url 'lodowka_wyszukiwanie' %}">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Wyszukaj po nazwie" aria-label="Wyszukaj" name="wyszukiwanie">
+                    <button class="btn btn-outline-secondary" type="sumit">
+                        Wyszukaj
+                    </button>
+                </form>
+            </div>
+            </div>
+        {% endif %}
+
+
+    </div>
+</contents>
+{% endblock %}

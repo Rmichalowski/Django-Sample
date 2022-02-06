@@ -1,0 +1,50 @@
+{% extends 'layout.html '%}
+
+{% block content %}
+<contents>
+    <div class="srodek">
+        <div class="naglowek_podstrony">
+            <div class="naglowek_podstrony_napis2">Lista lodówek:</div>
+            <div class="add_wyszukiwarka_form">
+                <form class="d-flex" method="POST" action="{% url 'lodowka_wyszukiwanie' %}">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Wyszukaj po nazwie" aria-label="Wyszukaj" name="wyszukiwanie">
+                    <button class="btn btn-outline-secondary" type="sumit">
+                        Wyszukaj
+                    </button>
+                </form>
+            </div>
+            <div class="add_lodowka_form">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form}}
+                    <button type="submit">Dodaj lodówkę</button>
+                    </form>
+            </div>
+    </div>
+
+        <div class="rzeczy">
+
+        {% for lodowka in Lodówka_all %}
+    <div class="rzecz_pom">
+                <div class="nazwa">
+                    <a href="{{lodowka.pk}}">{{lodowka.nazwa}}</a>
+                </div>
+                <div class="Pomieszczenie_delete_button">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <button type="submit" id="usun" name="usun" value="{{lodowka.pk}}">
+                            x
+                        </button>
+                    </form>
+                </div>
+
+        </div>
+            {% endfor %}
+
+</div>
+
+    </div>
+</contents>
+{% endblock %}

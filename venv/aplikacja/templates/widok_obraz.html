@@ -1,0 +1,21 @@
+{% extends 'layout.html '%}
+
+{% block content %}
+<contents>
+    <div class="srodek">
+        <div class="add_polka_form_naglowek">
+            <div class="add_polka_form_napis">Dodaj półkę w {{aktualne_pomieszczenie}}</div>
+        <div class="add_polka_form">
+      <form method="post" enctype="multipart/form-data" >
+
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Dodaj</button>
+      </form>
+    </div>
+    </div>
+       <img class='widok' src="/static/image/{{widok_obraz}}.jpg">
+        <br>
+    </div>
+</contents>
+{% endblock %}

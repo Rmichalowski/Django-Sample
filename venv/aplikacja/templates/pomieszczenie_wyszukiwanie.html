@@ -1,0 +1,58 @@
+{% extends 'layout.html '%}
+{% block content %}
+<contents>
+    <div class="srodek" style="padding-top: 1vh;">
+        {% if wyszukiwanie %}
+            <div class="naglowek_podstrony_napis_rzecz" >
+                <div class="napis_rzecz">Wyniki wyszukiwania dla: "{{wyszukiwanie}}"</div>
+            <div class="wyszukiwarka">
+                <form class="d-flex" method="POST" action="{% url 'pomieszczenie_wyszukiwanie' %}">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Wyszukaj po nazwie" aria-label="Wyszukaj" name="wyszukiwanie">
+                    <button class="btn btn-outline-secondary" type="sumit">
+                        Wyszukaj
+                    </button>
+                </form>
+            </div>
+            </div>
+
+         <div class="rzeczy">
+    {% for Pomieszczenie in pomieszczenie %}
+        <div class="rzecz_pom">
+                <div class="nazwa">
+                     <a href="/pomieszczenia/{{Pomieszczenie.pk}}">{{Pomieszczenie.nazwa}}</a>
+                </div>
+                <div class="Pomieszczenie_delete_button">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <button type="submit" id="usun" name="usun" value="{{pomieszczenie.pk}}">
+                            x
+                        </button>
+                    </form>
+                </div>
+
+        </div>
+    {% endfor %}
+    </div>
+
+
+        {% else %}
+            <div class="naglowek_podstrony_napis_rzecz">
+              <div class="napis_rzecz">Nie wpisano żadnej nazwy!!!</div>
+            <div class="wyszukiwarka">
+                <form class="d-flex" method="POST" action="{% url 'pomieszczenie_wyszukiwanie' %}">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Wyszukaj po nazwie" aria-label="Wyszukaj" name="wyszukiwanie">
+                    <button class="btn btn-outline-secondary" type="sumit">
+                        Wyszukaj
+                    </button>
+                </form>
+            </div>
+            </div>
+        {% endif %}
+
+
+    </div>
+</contents>
+{% endblock %}

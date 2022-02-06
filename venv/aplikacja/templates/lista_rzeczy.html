@@ -1,0 +1,53 @@
+{% extends 'layout.html '%}
+{% load static %}
+<link rel="stylesheet" href="{% static '/style_rzecz.css'%}?v=0.04">
+{% block content %}
+<contents>
+    <div class="srodek">
+        <div class="add_rzecz_form_naglowek">
+            <div class="add_rzecz_form_napis">Dodaj do swojego magazynu</div>
+        <div class="add_rzecz_form">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Dodaj rzecz</button> <!--<button type="">Anuluj</button>-->
+      </form>
+    </div>
+    </div>
+        <div class="naglowek_podstrony_napis_rzecz">
+            <div class="napis_rzecz">Lista rzeczy:</div>
+            <div class="wyszukiwarka">
+                <form class="d-flex" method="POST" action="{% url 'wyszukiwanie_rzeczy' %}">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Wyszukaj po nazwie" aria-label="Wyszukaj" name="wyszukiwanie">
+                    <button class="btn btn-outline-secondary" type="sumit">
+                        Wyszukaj
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="rzeczy">
+    {% for Rzecz in Lista_Rzeczy_all %}
+        <div class = 'rzecz'>
+            <div class = "rzecz_dane">
+      {{Rzecz.nazwa}} - {{Rzecz.ilość}}szt.<br>
+      {{Rzecz.waga}} kg<br>
+      {{Rzecz.gabaryt}}<br>
+      {{Rzecz.półka}}
+                </div>
+
+            <div class="Rzecz_delete_button">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <button type="submit" id="usun_rzecz" name="usun" value="{{Rzecz.pk}}">
+                            x
+                        </button>
+                    </form>
+                </div>
+        </div>
+    {% endfor %}
+    </div>
+    </div>
+</contents>
+{% endblock %}

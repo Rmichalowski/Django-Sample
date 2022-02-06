@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+{% load static %}
+<head>
+
+    <link rel="stylesheet" href="{% static '/style.css'%}?v=0.08">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Magazyn domowy </title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="magazyn_napis"> Magazyn Domowy </div>
+        <div class="menu">
+
+            <a href="javascript: history.go(-1)"><img class='icon_image' src="/static/image/round_arrow_back_black_24dp2.png"></a>
+            <a href="http://127.0.0.1:8000"><img class='icon_image' src="/static/image/round_grid_view_black_24dp2.png"></a>
+
+
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+<!--    <footer>2021</footer>-->
+</body>
+
+</html>

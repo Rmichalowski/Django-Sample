@@ -1,0 +1,576 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+  color: #dfefdb;
+}
+
+.header{
+    width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 6vh;
+    height: 12vh;
+     background-color: #8d8a8a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    flex-wrap: wrap;
+
+}
+.menu{
+    width: 7vw;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    flex-wrap: wrap;
+
+}
+.magazyn_napis{
+    width: 66vw;
+    margin-left: 8vw;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    flex-wrap: wrap;
+}
+.icon_image{
+    width: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5vw;
+}
+body {
+    background-image: url("image/magazyn.jpg");
+    background-size: cover;
+    opacity: 0.85;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin:1vh;
+}
+#id_opis {
+    height: 1vh;
+    width: 9vw;
+}
+.srodek{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #d7d1d1;
+    width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.przycisk{
+ display: flex;
+align-items: center;
+justify-content: center;
+    background-color: #bab5b5;
+    padding: 3vw;
+   width: 15.12vw;
+  font-size: 2vw;
+  border: 1px solid lightgray;
+}
+.rzeczy{
+    width: 85vw;
+}
+/*  POMIESZCZENIE  */
+.naglowek_podstrony{
+    width: 85vw;
+    float: left;
+    display: contents;
+}
+.add_pomieszczenia_form{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    background-color: #bab5b5;
+    font-size: 2.5vh;
+    float: left;
+     width: 25vw;
+    height: 6vh;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.naglowek_podstrony_napis{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 3.5vh;
+    width: 59vw;
+    background-color: #bab5b5;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+}
+
+.rzecz{
+    background-color: #c3c9be;
+    width: 27.2vw;
+    height: 16vh;
+    font-size: 3vh;
+    border: 1px solid lightgray;
+    padding-left: 1vw;
+    float: left;
+     display: flex;
+    align-items: center;
+}
+.nazwa{
+    width: 25vw;
+     float: left;
+}
+.Pomieszczenie_delete_button{
+    width: 1vw;
+    float: left;
+}
+#usun{
+    width: 1.5vw;
+    height: 1.5vw;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/*  RZECZY  */
+.add_rzecz_form_naglowek{
+
+    width: 85vw;
+    float: left;
+    display: contents;
+}
+
+.add_rzecz_form{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #bab5b5;
+    font-size: 2.5vh;
+    float: left;
+     width: 69vw;
+    height: 9vh;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add_rzecz_form_napis{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 2.5vh;
+    width: 15vw;
+    background-color: #bab5b5;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+}
+.naglowek_podstrony_napis_rzecz{
+    font-size: 3.5vh;
+    width: 84vw;
+    background-color: #a8a3a3;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+}
+.rzecz_pom{
+    background-color: #c3c9be;
+    width: 27.2vw;
+    height: 8vh;
+    font-size: 3vh;
+    border: 1px solid lightgray;
+    padding-left: 1vw;
+    float: left;
+     display: flex;
+    align-items: center;
+}
+.rzecz_dane{
+    width: 23.5vw;
+     float: left;
+}
+.Rzecz_delete_button{
+    width: 1vw;
+    float: left;
+}
+#usun_rzecz{
+    width: 4.5vh;
+    height: 4.5vh;
+    display:flex;
+    flex-wrap: wrap;
+    font-size: 3vh;
+    justify-content: center;
+}
+.add_polka_form_naglowek{
+
+    width: 85vw;
+    float: left;
+    display: contents;
+}
+.add_polka_form{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #bab5b5;
+    font-size: 2.5vh;
+    float: left;
+     width: 69vw;
+    height: 9vh;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add_polka_form_napis {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 2.5vh;
+    width: 15vw;
+    background-color: #bab5b5;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+}
+.napis_rzecz{
+    width: 140vw;
+}
+.wyszukiwarka{
+    width: 33vw;
+    font-size: 2.5vh;
+}
+.add_lodowka_form{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 0.5vw;
+    background-color: #bab5b5;
+    font-size: 2.5vh;
+    float: left;
+     width: 24.5vw;
+    height: 6vh;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add_wyszukiwarka_form{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    background-color: #bab5b5;
+    font-size: 2.5vh;
+    float: left;
+     width: 24.5vw;
+    height: 6vh;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.naglowek_podstrony_napis2{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 3.5vh;
+    width: 34.5vw;
+    background-color: #bab5b5;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+}
+.naglowek_podstrony_napis3{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 3.5vh;
+    width: 85vw;
+    background-color: #bab5b5;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+}
+@media (max-width: 430px) {
+    .header{
+        font-size: 4vh;
+    }
+    .add_rzecz_form_napis {
+        font-size: 2.7vh;
+        height: 5vh;
+        width: 80vw;
+        margin-bottom: 0px;
+    }
+    .magazyn_napis {
+    width: 42vw;
+    margin-left: 20vw;
+    }
+    .menu {
+    width: 15vw;
+    }
+    .icon_image{
+    width: 5.5vw;
+    }
+    .add_rzecz_form {
+    font-size: 2.7vh;
+    height: 15vh;
+    margin-top: 0px;
+    width: 80vw;
+}
+    .rzecz {
+    width: 83.2vw;
+    font-size: 2.7vh;
+    }
+    .rzecz_dane {
+    width: 70.5vw;
+}
+    .napis_rzecz {
+    width: 35vw;
+        margin-left: 2vw;
+}
+    .wyszukiwarka {
+    width: 0vw;
+    font-size: 2.5vh;
+}
+.przycisk {
+    width: 79.12vw;
+    font-size: 9vw;
+}
+.rzecz_pom {
+    width: 83.2vw;
+}
+#usun {
+    width: 7.5vw;
+    height: 6.5vw;
+    display: inline;
+}
+.nazwa {
+    width: 70vw;
+}
+    .naglowek_podstrony_napis2 {
+    font-size: 3vh;
+    width: 84vw;
+    margin-top: 1vh;
+    margin-bottom: 0vh;
+    padding-left: 15vw;
+        height: 4vh;
+
+}
+    .add_lodowka_form {
+    font-size: 0vh;
+    width: 85.5vw;
+        margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+    .add_wyszukiwarka_form {
+    width: 85vw;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+        height: 4vh;
+    }
+    .widok
+    {
+        width: 84.5vw;
+    }
+    .add_polka_form {
+    font-size: 3vh;
+    height: 25vh;
+    margin-top: 0px;
+    width: 80vw;
+}
+    .add_polka_form_napis {
+        font-size: 3vh;
+        height: 5vh;
+        width: 79vw;
+        margin-bottom: 0px;
+    }
+    .magazyn_napis {
+    width: 42vw;
+    margin-left: 0;
+    margin-left: 20vw;
+    }
+
+}
+
+@media (max-width: 930px) and (min-width: 430px) {
+
+.przycisk {
+    width: 36.12vw;
+    font-size: 5vw;
+}
+    .header {
+
+    font-size: 5vh;
+}
+    .icon_image{
+    width: 6.5vw;
+    }
+    .menu {
+    width: 17vw;
+}
+    .magazyn_napis {
+    width: 60vw;
+}
+    .add_rzecz_form_napis {
+        font-size: 2.7vh;
+        height: 5vh;
+        width: 84vw;
+        margin-bottom: 0px;
+    }
+    .add_rzecz_form {
+    font-size: 2.7vh;
+    height: 10vh;
+    margin-top: 0px;
+    width: 86vw;
+}
+    .napis_rzecz {
+    width: 35vw;
+        margin-left: 2vw;
+}
+    .rzecz {
+    width: 83.8vw;
+    font-size: 2.7vh;
+    }
+    .rzecz_dane {
+    width: 70.5vw;
+}
+    .naglowek_podstrony_napis2 {
+    font-size: 3vh;
+    width: 84vw;
+    margin-top: 1vh;
+    margin-bottom: 0vh;
+    padding-left: 15vw;
+        height: 4vh;
+
+}
+    .add_wyszukiwarka_form {
+    width: 85vw;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+        height: 4vh;
+    }
+    .add_lodowka_form {
+    font-size: 2.5vh;
+    width: 85.5vw;
+        margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+    .rzecz_pom {
+    width: 83.8vw;
+}
+    .nazwa {
+    width: 70vw;
+}
+    #usun {
+    width: 7.5vw;
+    height: 6.5vw;
+    display: inline;
+        font-size: 2vh;
+}
+     .add_polka_form {
+    font-size: 3vh;
+    height: 25vh;
+    margin-top: 0px;
+    width: 85vw;
+}
+    .add_polka_form_napis {
+        font-size: 3vh;
+        height: 5vh;
+        width: 85vw;
+        margin-bottom: 0px;
+    }
+    .widok
+    {
+        width: 84.5vw;
+    }
+}
+@media (max-width: 1300px) and (min-width: 930px) {
+
+.przycisk {
+    width: 36.12vw;
+    font-size: 5vw;
+}
+    .header {
+
+    font-size: 5vh;
+}
+    .icon_image{
+    width: 3.5vw;
+    }
+    .menu {
+    width: 17vw;
+}
+    .magazyn_napis {
+    width: 60vw;
+}
+    .add_rzecz_form_napis {
+        font-size: 2.7vh;
+        height: 5vh;
+        width: 84vw;
+        margin-bottom: 0px;
+    }
+    .add_rzecz_form {
+    font-size: 2.7vh;
+    height: 10vh;
+    margin-top: 0px;
+    width: 86vw;
+}
+    .napis_rzecz {
+    width: 35vw;
+        margin-left: 2vw;
+}
+    .rzecz {
+    width: 41.3vw;
+    font-size: 2.7vh;
+    }
+    .rzecz_dane {
+    width: 34.5vw;
+}
+    .naglowek_podstrony_napis2 {
+    font-size: 4vh;
+    width: 84vw;
+    margin-top: 1vh;
+    margin-bottom: 0vh;
+    padding-left: 15vw;
+        height: 4vh;
+
+}
+    .add_wyszukiwarka_form {
+    width: 85vw;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+        height: 4vh;
+    }
+    .add_lodowka_form {
+    font-size: 2.5vh;
+    width: 85.5vw;
+        margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+    .rzecz_pom {
+    width: 41.3vw;
+}
+    .nazwa {
+    width: 32vw;
+}
+    #usun {
+    width: 3.5vw;
+    height: 3.5vw;
+    display: inline;
+        font-size: 2vh;
+}
+     .add_polka_form {
+    font-size: 3vh;
+    height: 12vh;
+    margin-top: 0px;
+    width: 85vw;
+}
+    .add_polka_form_napis {
+        font-size: 3vh;
+        height: 5vh;
+        width: 85vw;
+        margin-bottom: 0px;
+    }
+    .widok
+    {
+        width: 84.5vw;
+    }
+}

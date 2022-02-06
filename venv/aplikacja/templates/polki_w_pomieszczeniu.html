@@ -1,0 +1,40 @@
+{% extends 'layout.html '%}
+
+{% block content %}
+<contents>
+    <div class="srodek">
+
+        <div class="add_polka_form_naglowek">
+            <div class="add_polka_form_napis">Dodaj półkę w {{aktualne_pomieszczenie}}</div>
+        <div class="add_polka_form">
+      <form method="post" enctype="multipart/form-data" >
+
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Dodaj</button>
+      </form>
+    </div>
+    </div>
+<div class="naglowek_podstrony_napis_rzecz">Lista półek w {{aktualne_pomieszczenie}}:</div>
+        <div class="rzeczy">
+        {% for polki in Polki_all %}
+
+    <div class="rzecz">
+                <div class="rzecz_dane">
+                    <a href="/rzeczynapolce/{{polki.pk}}">{{polki.nazwa}}</a>
+                </div>
+                <div class="rzecz_delete_button">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <button type="submit" id="usun_rzecz" name="usun" value="{{polki.pk}}">
+                            x
+                        </button>
+                    </form>
+                </div>
+        </div>
+            {% endfor %}
+</div>
+    </div>
+</contents>
+{% endblock %}

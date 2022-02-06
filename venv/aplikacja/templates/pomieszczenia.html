@@ -1,0 +1,50 @@
+{% extends 'layout.html '%}
+{% load static %}
+<link rel="stylesheet" href="{% static '/style_rzecz.css'%}?v=0.04">
+{% block content %}
+<contents>
+    <div class="srodek">
+        <div class="naglowek_podstrony">
+            <div class="naglowek_podstrony_napis2">Twoje pomieszczenia:</div>
+    <div class="add_wyszukiwarka_form">
+                <form class="d-flex" method="POST" action="{% url 'pomieszczenie_wyszukiwanie' %}">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Wyszukaj po nazwie" aria-label="Wyszukaj" name="wyszukiwanie">
+                    <button class="btn btn-outline-secondary" type="sumit">
+                        Wyszukaj
+                    </button>
+                </form>
+            </div>
+            <div class="add_lodowka_form">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Dodaj pomieszczenie</button> <!--<button type="">Anuluj</button>-->
+      </form>
+    </div>
+        </div>
+
+<div class="rzeczy">
+
+         {% for pomieszczenie in Pomieszczenie_all %}
+    <div class="rzecz_pom">
+                <div class="nazwa">
+                     <a href="{{pomieszczenie.pk}}">{{pomieszczenie.nazwa}}</a>
+                </div>
+                <div class="Pomieszczenie_delete_button">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <button type="submit" id="usun" name="usun" value="{{pomieszczenie.pk}}">
+                            x
+                        </button>
+                    </form>
+                </div>
+
+        </div>
+            {% endfor %}
+
+</div>
+        </div>
+</contents>
+{% endblock %}

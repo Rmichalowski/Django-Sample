@@ -1,0 +1,41 @@
+{% extends 'layout.html '%}
+<% import time %>
+{% block content %}
+<contents>
+    <div class="srodek">
+
+        <div class="add_rzecz_form_naglowek">
+            <div class="add_rzecz_form_napis">Dodaj do lodowki {{aktualna_lodowka}}</div>
+        <div class="add_rzecz_form">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Dodaj</button> <!--<button type="">Anuluj</button>-->
+      </form>
+    </div>
+    </div>
+<div class="naglowek_podstrony_napis_rzecz">Lista produktów w lodówce {{aktualna_lodowka}}:</div>
+        <div class="rzeczy">
+
+        {% for produkt in Produkty_all %}
+            <div class="rzecz">
+                <div class="rzecz_dane">
+                    {{produkt.nazwa}}<br>
+                    {{produkt.ilość}} {{produkt.jednostka}}<br>
+                    termin ważności: {{produkt.data_przydatności|date:"d.m.Y"}}r.
+                </div>
+                <div class="rzecz_delete_button">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <button type="submit" id="usun_rzecz" name="usun" value="{{produkt.pk}}">
+                            x
+                        </button>
+                    </form>
+                </div>
+        </div>
+            {% endfor %}
+</div>
+    </div>
+</contents>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'layout.html '%}
+
+{% block content %}
+<contents>
+    <div class="srodek">
+        <div class="naglowek_podstrony">
+            <div class="naglowek_podstrony_napis3" style="width: 85vw">Twoje pomieszczenia:</div>
+        </div>
+
+<div class="rzeczy">
+
+         {% for pomieszczenie in pomieszczenia_all %}
+    <div class="rzecz_pom">
+                <div class="nazwa">
+                     <a href="{{pomieszczenie.pk}}">{{pomieszczenie.nazwa}}</a>
+                    <!--{{pomieszczenie.nazwa}}-->
+                </div>
+
+        </div>
+            {% endfor %}
+
+</div>
+        </div>
+</contents>
+{% endblock %}
